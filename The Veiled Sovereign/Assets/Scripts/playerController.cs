@@ -4,6 +4,8 @@ using UnityEngine.Rendering;
 public class playerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float runSpeed = 10f;
+    private float currentSpeed;
     public Rigidbody2D rb;
 
     Vector2 moveDirection;
@@ -25,6 +27,19 @@ public class playerController : MonoBehaviour
     }
     public void Update()
     {
+
+        //Run section
+
+        if (Input.GetKey(KeyCode.LeftShift)){
+
+            currentSpeed = runSpeed;
+
+        }
+        else{
+
+            currentSpeed = moveSpeed;
+
+        }
         // Left mouse button pressed
         if (Input.GetMouseButtonDown(0))
         {
@@ -55,7 +70,7 @@ public class playerController : MonoBehaviour
         moveDirection.y = moveY;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.linearVelocity = new Vector2(moveDirection.x *currentSpeed, moveDirection.y * currentSpeed);
 
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
@@ -76,6 +91,8 @@ public class playerController : MonoBehaviour
     void ShootBow()
     {
         Debug.Log("Shoot Arrow!");
+
+
 
     }
 }
