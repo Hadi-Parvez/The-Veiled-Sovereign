@@ -256,12 +256,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.10425435, y: 0.4973445}
-      - {x: 0.104353614, y: 0.5228244}
-      - {x: 0.10793884, y: 0.98012793}
-      - {x: -0.10937823, y: 0.98246324}
-      - {x: -0.113612205, y: 0.4940703}
-      - {x: -0.20797062, y: 0.45598388}
+    - - {x: 0, y: 0.5}
+      - {x: -0.15234375, y: 0.47265625}
       - {x: -0.29296875, y: 0.40234375}
       - {x: -0.40234375, y: 0.29296875}
       - {x: -0.47265625, y: 0.15234375}
@@ -270,7 +266,9 @@ PolygonCollider2D:
       - {x: -0.40234375, y: -0.29296875}
       - {x: -0.29296875, y: -0.40234375}
       - {x: -0.15234375, y: -0.47265625}
-      - {x: 0, y: -0.5}
+      - {x: -0.111695856, y: -0.6368172}
+      - {x: 0.0062214285, y: -0.63479745}
+      - {x: 0.102502584, y: -0.63921154}
       - {x: 0.15234375, y: -0.47265625}
       - {x: 0.29296875, y: -0.40234375}
       - {x: 0.40234375, y: -0.29296875}
@@ -321,8 +319,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rb: {fileID: 0}
+  runSpeed: 10
+  rb: {fileID: 414214136}
   maxHealth: 3
+  arrowPrefab: {fileID: 0}
+  arrowForce: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +571,7 @@ Transform:
   m_GameObject: {fileID: 1596180845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.006, y: 0.708, z: 0}
+  m_LocalPosition: {x: -0.003, y: -0.368, z: 0}
   m_LocalScale: {x: 0.2114, y: 0.5446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
