@@ -5,13 +5,12 @@ public class MainMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
  public void PlayGame()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync("PlayScene");
     }
 public void OpenOptions()
     {
         SceneManager.LoadSceneAsync("OptionsPanel");
-        // Or use scene index if you prefer
-        // SceneManager.LoadSceneAsync(2);
+       
     }
     
 

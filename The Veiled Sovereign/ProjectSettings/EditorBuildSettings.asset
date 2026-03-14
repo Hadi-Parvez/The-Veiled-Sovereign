@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 5fd5ab522c26b63478d835c7ecdf5067
   - enabled: 1
+    path: Assets/Scenes/PlayScene.unity
+    guid: edaf563d8538d2c4db5e32488e404be5
+  - enabled: 1
     path: Assets/Scenes/OptionsPanel.unity
     guid: 2da200878c6525a4598c1807efed03cd
   - enabled: 1
