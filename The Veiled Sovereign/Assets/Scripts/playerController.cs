@@ -18,6 +18,14 @@ public class playerController : MonoBehaviour
     public GameObject arrowPrefab;
     public float arrowForce = 5f;
 
+    public enum MovementMode
+    {
+        TopDown,
+        SideScroller
+    }
+
+    public MovementMode movementMode = MovementMode.TopDown;
+
     private void Start()
     {
 
@@ -57,24 +65,37 @@ public class playerController : MonoBehaviour
         }
     }
 
-   
+
 
 
     private void FixedUpdate()
     {
-
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        moveDirection.x = moveX;
-        moveDirection.y = moveY;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        rb.linearVelocity = new Vector2(moveDirection.x *currentSpeed, moveDirection.y * currentSpeed);
+        if (movementMode == MovementMode.TopDown)
+        {
+            moveDirection.x = moveX;
+            moveDirection.y = moveY;
 
-        Vector2 aimDirection = mousePosition - rb.position;
-        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
-        rb.rotation = aimAngle;
+            rb.linearVelocity = new Vector2(moveDirection.x * currentSpeed, moveDirection.y * currentSpeed);
+
+            Vector2 aimDirection = mousePosition - rb.position;
+            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
+            rb.rotation = aimAngle;
+        }
+
+        else if (movementMode == MovementMode.SideScroller)
+        {
+            rb.linearVelocity = new Vector2(moveX * currentSpeed, rb.linearVelocity.y);
+
+            if (moveX > 0)
+                transform.localScale = new Vector3(1, 1, 1);
+            else if (moveX < 0)
+                transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     // Uses the sword to attack
