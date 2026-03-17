@@ -5,6 +5,20 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     private bool isPaused = false;
+    
+    void Update()
+{
+    if (Input.GetKeyDown(KeyCode.Escape))
+    {
+        Debug.Log("ESC pressed");
+
+        if (isPaused)
+            ResumeGame();
+        else
+            PauseGame();
+    }
+}
+
     public void Pause(){
    
          if (Input.GetKeyDown(KeyCode.Escape))
