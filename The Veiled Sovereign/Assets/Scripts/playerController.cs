@@ -12,8 +12,9 @@ public class playerController : MonoBehaviour
     Vector2 mousePosition;
 
     // Health System
-    public int maxHealth = 3;
+    public int maxHealth = 4;
     private int currentHealth;
+    public HealthBar healthBar;
 
     public GameObject arrowPrefab;
     public float arrowForce = 5f;
@@ -64,7 +65,11 @@ public class playerController : MonoBehaviour
             }
         }
     }
-
+    //Health Damage
+    void TakeDamage(int damage){
+        currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
 
 
 
