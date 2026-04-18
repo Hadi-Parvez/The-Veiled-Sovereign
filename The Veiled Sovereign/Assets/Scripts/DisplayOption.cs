@@ -1,12 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class DisplayOption : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void BackToOption(){
+    public GameObject optionsPanel;
+    public GameObject displayPanel;
 
-       SceneManager.LoadSceneAsync("OptionsPanel");
-    
-   }
+    public void BackToOption()
+    {
+        optionsPanel.SetActive(true);
+        displayPanel.SetActive(false);
+    }
 }

@@ -2,17 +2,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
- public void PlayGame()
+    public GameObject mainMenuPanel;
+    public GameObject optionsPanel;
+
+    public void PlayGame()
     {
         SceneManager.LoadSceneAsync("PlayScene");
     }
-public void OpenOptions()
+
+    public void OpenOptions()
     {
-        SceneManager.LoadSceneAsync("OptionsPanel");
-       
+        mainMenuPanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
-    
+
+    public void BackToMainMenu()
+    {
+        mainMenuPanel.SetActive(true);
+        optionsPanel.SetActive(false);
+    }
 
     // Exit Button
     public void QuitGame()

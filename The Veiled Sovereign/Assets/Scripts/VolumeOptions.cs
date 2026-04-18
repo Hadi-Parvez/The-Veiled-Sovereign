@@ -1,9 +1,13 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class VolumeOptions : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void BackToOption(){
-        SceneManager.LoadSceneAsync("OptionsPanel");
+    public GameObject optionsPanel;
+    public GameObject volumePanel;
+
+    public void BackToOption()
+    {
+        optionsPanel.SetActive(true);
+        volumePanel.SetActive(false);
     }
 }

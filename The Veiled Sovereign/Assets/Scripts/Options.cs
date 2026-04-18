@@ -1,22 +1,42 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 public class Options : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject mainMenuPanel;
+    public GameObject optionsPanel;
+
+    public GameObject volumePanel;
+    public GameObject displayPanel;
+    public GameObject graphicsPanel;
+    public GameObject keyBindsPanel;
+
     public void BackToMenu()
     {
-        SceneManager.LoadSceneAsync("Main Menu");
+        mainMenuPanel.SetActive(true);
+        optionsPanel.SetActive(false);
     }
-    public void Volume(){
-        SceneManager.LoadSceneAsync("SoundOptions");
+    public void BackToGame()
+    {
+        mainMenuPanel.SetActive(true);
+        optionsPanel.SetActive(false);
     }
-    public void Display(){
-        SceneManager.LoadSceneAsync("DisplayOptions");
+    public void OpenVolume()
+    {
+        optionsPanel.SetActive(false);
+        volumePanel.SetActive(true);
     }
-    public void Graphics(){
-        SceneManager.LoadSceneAsync("GraphicsOptions");
+    public void OpenDisplay()
+    {
+        optionsPanel.SetActive(false);
+        displayPanel.SetActive(true);
     }
-    public void KeyBinds(){
-        SceneManager.LoadSceneAsync("KeyBindOptions");
+    public void OpenGraphics()
+    {
+        optionsPanel.SetActive(false);
+        graphicsPanel.SetActive(true);
+    }
+    public void OpenKeyBinds()
+    {
+        optionsPanel.SetActive(false);
+        keyBindsPanel.SetActive(true);
     }
 }
