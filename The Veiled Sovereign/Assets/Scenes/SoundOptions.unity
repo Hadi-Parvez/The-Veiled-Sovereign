@@ -1368,6 +1368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd5fdfccfa0dcd4f8c8699afce34842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeOptions
+  volumePanel: {fileID: 0}
+  optionsPanel: {fileID: 0}
 --- !u!114 &916013099
 MonoBehaviour:
   m_ObjectHideFlags: 0

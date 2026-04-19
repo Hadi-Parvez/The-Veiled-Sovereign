@@ -1,28 +1,60 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuPanel;
     public GameObject optionsPanel;
+    public GameObject playModePanel;
+
+    void Start()
+    {
+        ShowMainMenu(); // default state
+    }
+
+    // ------------------ PANEL CONTROL ------------------
+
+    void HideAllPanels()
+    {
+        mainMenuPanel.SetActive(false);
+        optionsPanel.SetActive(false);
+        playModePanel.SetActive(false);
+    }
+
+    public void ShowMainMenu()
+    {
+        HideAllPanels();
+        mainMenuPanel.SetActive(true);
+    }
+
+    public void ShowOptions()
+    {
+        HideAllPanels();
+        optionsPanel.SetActive(true);
+    }
+
+    public void ShowPlayMode()
+    {
+        HideAllPanels();
+        playModePanel.SetActive(true);
+    }
+
+    // ------------------ BUTTON ACTIONS ------------------
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("PlayScene");
+        ShowPlayMode(); // instead of loading scene
     }
 
     public void OpenOptions()
     {
-        mainMenuPanel.SetActive(false);
-        optionsPanel.SetActive(true);
+        ShowOptions();
     }
 
     public void BackToMainMenu()
     {
-        mainMenuPanel.SetActive(true);
-        optionsPanel.SetActive(false);
+        ShowMainMenu();
     }
 
-    // Exit Button
     public void QuitGame()
     {
         Application.Quit();

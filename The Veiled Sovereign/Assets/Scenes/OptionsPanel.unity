@@ -359,7 +359,6 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 0}
   optionsPanel: {fileID: 0}
   volumePanel: {fileID: 0}
-  displayPanel: {fileID: 0}
   graphicsPanel: {fileID: 0}
   keyBindsPanel: {fileID: 0}
 --- !u!4 &667166699
@@ -773,7 +772,6 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 0}
   optionsPanel: {fileID: 0}
   volumePanel: {fileID: 0}
-  displayPanel: {fileID: 0}
   graphicsPanel: {fileID: 0}
   keyBindsPanel: {fileID: 0}
 --- !u!1 &1005932611

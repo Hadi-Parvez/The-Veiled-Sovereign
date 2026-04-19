@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class VolumeOptions : MonoBehaviour
 {
-    public GameObject optionsPanel;
     public GameObject volumePanel;
+    public GameObject optionsPanel;
 
     public void BackToOption()
     {
