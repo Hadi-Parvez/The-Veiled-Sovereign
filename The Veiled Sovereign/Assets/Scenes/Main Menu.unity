@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2422,7 +2422,6 @@ GameObject:
   - component: {fileID: 587643352}
   - component: {fileID: 587643351}
   - component: {fileID: 587643350}
-  - component: {fileID: 587643353}
   m_Layer: 5
   m_Name: OptionButton
   m_TagString: Untagged
@@ -2544,35 +2543,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587643348}
   m_CullTransparentMesh: 1
---- !u!114 &587643353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 587643348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 886665526}
-          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
-          m_MethodName: MoveTo
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 587643349}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &593883446
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2694,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 886665527}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
           m_MethodName: MoveTo
           m_Mode: 2
@@ -3261,6 +3231,7 @@ GameObject:
   - component: {fileID: 670886122}
   - component: {fileID: 670886121}
   - component: {fileID: 670886120}
+  - component: {fileID: 670886123}
   m_Layer: 5
   m_Name: NewGame
   m_TagString: Untagged
@@ -3307,7 +3278,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.8039216, g: 0.41568628, b: 0.18039216, a: 0.54901963}
@@ -3357,7 +3328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3382,6 +3353,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670886118}
   m_CullTransparentMesh: 1
+--- !u!114 &670886123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670886118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
+          m_MethodName: MoveTo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 670886119}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &691957833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -3929,7 +3929,6 @@ GameObject:
   - component: {fileID: 886665524}
   - component: {fileID: 886665525}
   - component: {fileID: 886665526}
-  - component: {fileID: 886665527}
   m_Layer: 0
   m_Name: MenuPrompt
   m_TagString: Untagged
@@ -4021,25 +4020,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 886665520}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd09c0178849454f91f074498ec13ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ccf7d8967ddd2a44a12123c0c796174, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HighlightMover
-  highlight: {fileID: 861680340}
-  defaultTarget: {fileID: 1893646617}
---- !u!114 &886665527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886665520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcd09c0178849454f91f074498ec13ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HighlightMover
-  highlight: {fileID: 372921200}
-  defaultTarget: {fileID: 1330695973}
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonHighlight
+  highlight: {fileID: 861680339}
 --- !u!1 &901443595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,6 +4418,7 @@ GameObject:
   - component: {fileID: 969695553}
   - component: {fileID: 969695552}
   - component: {fileID: 969695551}
+  - component: {fileID: 969695554}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -4480,7 +4465,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.8039216, g: 0.41568628, b: 0.18039216, a: 0.54901963}
@@ -4530,7 +4515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4555,6 +4540,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 969695549}
   m_CullTransparentMesh: 1
+--- !u!114 &969695554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969695549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
+          m_MethodName: MoveTo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 969695550}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &978896371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5924,6 +5938,7 @@ GameObject:
   - component: {fileID: 1291662281}
   - component: {fileID: 1291662280}
   - component: {fileID: 1291662279}
+  - component: {fileID: 1291662282}
   m_Layer: 5
   m_Name: BacktoMenu
   m_TagString: Untagged
@@ -5970,7 +5985,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.8039216, g: 0.41568628, b: 0.18039216, a: 0.54901963}
@@ -6020,7 +6035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6045,6 +6060,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291662277}
   m_CullTransparentMesh: 1
+--- !u!114 &1291662282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291662277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
+          m_MethodName: MoveTo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1291662278}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1313369959
 GameObject:
   m_ObjectHideFlags: 0
@@ -6541,7 +6585,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 886665527}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
           m_MethodName: MoveTo
           m_Mode: 2
@@ -6704,7 +6748,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 886665527}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
           m_MethodName: MoveTo
           m_Mode: 2
@@ -7092,7 +7136,6 @@ GameObject:
   - component: {fileID: 1392075141}
   - component: {fileID: 1392075140}
   - component: {fileID: 1392075139}
-  - component: {fileID: 1392075142}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -7214,35 +7257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392075137}
   m_CullTransparentMesh: 1
---- !u!114 &1392075142
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392075137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 886665526}
-          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
-          m_MethodName: MoveTo
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1392075138}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1402424492
 GameObject:
   m_ObjectHideFlags: 0
@@ -7379,6 +7393,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402424492}
+  m_CullTransparentMesh: 1
+--- !u!1 &1407716134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407716135}
+  - component: {fileID: 1407716137}
+  - component: {fileID: 1407716136}
+  m_Layer: 5
+  m_Name: Highlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1407716135
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407716134}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.4166667, y: 0.4166667, z: 0.4166667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2024080512}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 87.713, y: 76.519}
+  m_SizeDelta: {x: 422.30005, y: 66.79999}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1407716136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407716134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -2210917227527022263, guid: b4d728e20dc472c43b5a0e29910257b5, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1407716137
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407716134}
   m_CullTransparentMesh: 1
 --- !u!1 &1408778125
 GameObject:
@@ -8804,6 +8893,7 @@ GameObject:
   - component: {fileID: 1797342095}
   - component: {fileID: 1797342094}
   - component: {fileID: 1797342093}
+  - component: {fileID: 1797342096}
   m_Layer: 5
   m_Name: LoadGame
   m_TagString: Untagged
@@ -8850,7 +8940,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
     m_HighlightedColor: {r: 0.8039216, g: 0.41568628, b: 0.18039216, a: 0.54901963}
@@ -8900,7 +8990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8925,6 +9015,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797342091}
   m_CullTransparentMesh: 1
+--- !u!114 &1797342096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797342091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
+          m_MethodName: MoveTo
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1797342092}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1801597695
 GameObject:
   m_ObjectHideFlags: 0
@@ -9553,7 +9672,6 @@ GameObject:
   - component: {fileID: 1893646620}
   - component: {fileID: 1893646619}
   - component: {fileID: 1893646618}
-  - component: {fileID: 1893646621}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -9657,8 +9775,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9675,35 +9793,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893646616}
   m_CullTransparentMesh: 1
---- !u!114 &1893646621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893646616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
-  m_Delegates:
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 886665526}
-          m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
-          m_MethodName: MoveTo
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 1893646617}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.RectTransform, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1911629308
 GameObject:
   m_ObjectHideFlags: 0
@@ -9843,7 +9932,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 886665527}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: HighlightMover, Assembly-CSharp
           m_MethodName: MoveTo
           m_Mode: 2
@@ -10543,6 +10632,7 @@ RectTransform:
   m_Children:
   - {fileID: 648221024}
   - {fileID: 1313369960}
+  - {fileID: 1407716135}
   - {fileID: 969695550}
   - {fileID: 1797342092}
   - {fileID: 670886119}

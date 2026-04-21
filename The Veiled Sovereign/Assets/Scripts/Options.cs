@@ -9,13 +9,6 @@ public class Options : MonoBehaviour
     public GameObject graphicsPanel;
     public GameObject keyBindsPanel;
 
-    void Start()
-    {
-        ShowOptions(); // default view
-    }
-
-    // ---------------- PANEL CONTROL ----------------
-
     void HideAllSubPanels()
     {
         volumePanel.SetActive(false);
@@ -25,13 +18,15 @@ public class Options : MonoBehaviour
 
     public void ShowOptions()
     {
-        HideAllSubPanels();
+        mainMenuPanel.SetActive(false);
         optionsPanel.SetActive(true);
+
+        HideAllSubPanels();
     }
 
     public void OpenVolume()
     {
-        optionsPanel.SetActive(false);
+        HideAllSubPanels();
         volumePanel.SetActive(true);
     }
 
@@ -47,16 +42,14 @@ public class Options : MonoBehaviour
         keyBindsPanel.SetActive(true);
     }
 
-    // ---------------- BACK ----------------
-
-    public void BackToOptions()
-    {
-        ShowOptions();
-    }
-
     public void BackToMenu()
     {
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
+    }
+
+    public void BackToOptions()
+    {
+        HideAllSubPanels();
     }
 }

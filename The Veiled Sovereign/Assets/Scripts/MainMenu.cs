@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        ShowPlayMode(); // instead of loading scene
+        ShowPlayMode();
     }
 
     public void OpenOptions()
@@ -58,5 +58,6 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+        Debug.Log("Quit Game"); // visible in editor
     }
 }
