@@ -2,54 +2,42 @@ using UnityEngine;
 
 public class Options : MonoBehaviour
 {
+    [Header("Main Panels")]
     public GameObject mainMenuPanel;
     public GameObject optionsPanel;
 
-    public GameObject volumePanel;
-    public GameObject graphicsPanel;
-    public GameObject keyBindsPanel;
+    [Header("All Sub Panels")]
+    public GameObject[] subPanels;
 
-    void HideAllSubPanels()
-    {
-        volumePanel.SetActive(false);
-        graphicsPanel.SetActive(false);
-        keyBindsPanel.SetActive(false);
-    }
+    // ------------------ OPEN OPTIONS ------------------
 
-    public void ShowOptions()
+    public void OpenOptions()
     {
         mainMenuPanel.SetActive(false);
         optionsPanel.SetActive(true);
 
-        HideAllSubPanels();
+        ShowPanel(0); // default panel (Display)
     }
 
-    public void OpenVolume()
+    // ------------------ CORE FUNCTION ------------------
+
+    public void ShowPanel(int index)
     {
-        HideAllSubPanels();
-        volumePanel.SetActive(true);
+        // Disable all panels
+        foreach (GameObject panel in subPanels)
+        {
+            panel.SetActive(false);
+        }
+
+        // Enable selected panel
+        subPanels[index].SetActive(true);
     }
 
-    public void OpenGraphics()
-    {
-        HideAllSubPanels();
-        graphicsPanel.SetActive(true);
-    }
-
-    public void OpenKeyBinds()
-    {
-        HideAllSubPanels();
-        keyBindsPanel.SetActive(true);
-    }
+    // ------------------ BACK ------------------
 
     public void BackToMenu()
     {
         optionsPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
-    }
-
-    public void BackToOptions()
-    {
-        HideAllSubPanels();
     }
 }

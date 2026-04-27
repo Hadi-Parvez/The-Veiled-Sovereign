@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopUIManager : MonoBehaviour
 {
@@ -43,6 +44,6 @@ public class ShopUIManager : MonoBehaviour
 
     public void ExitShop()
     {
-        shopPanel.SetActive(false);
+        SceneManager.LoadScene("MainScene");
     }
 }
