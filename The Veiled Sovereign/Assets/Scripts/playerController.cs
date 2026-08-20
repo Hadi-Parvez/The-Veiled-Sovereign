@@ -1,124 +1,100 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 
-public class playerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float runSpeed = 10f;
-    private float currentSpeed;
-    public Rigidbody2D rb;
-
-    Vector2 moveDirection;
-    Vector2 mousePosition;
-
-    // Health System
-    public int maxHealth = 4;
-    private int currentHealth;
-    public HealthBar healthBar;
-
-    public GameObject arrowPrefab;
-    public float arrowForce = 5f;
-
     public enum MovementMode
     {
         TopDown,
         SideScroller
     }
 
+    [Header("Movement")]
+    public float moveSpeed = 5f;
+    public float runSpeed = 10f;
+
+    [Header("Components")]
+    public Rigidbody2D rb;
+    public Animator animator;
+
+    [Header("Movement Mode")]
     public MovementMode movementMode = MovementMode.TopDown;
 
-    private void Start()
+    private Vector2 movement;
+    private Vector2 lastDirection = Vector2.down;
+
+    private void Update()
     {
+        // Get movement input
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
 
-        currentHealth = maxHealth;
-        Debug.Log("Player HP: " + currentHealth);
+        // Prevent diagonal movement from being faster
+        movement = movement.normalized;
 
-    }
-    public void Update()
-    {
-
-        //Run section
-
-        if (Input.GetKey(KeyCode.LeftShift)){
-
-            currentSpeed = runSpeed;
-
+        // Remember the last direction
+        if (movement != Vector2.zero)
+        {
+            lastDirection = movement;
         }
-        else{
 
-            currentSpeed = moveSpeed;
+        // Check if player is running
+        bool isRunning =
+            Input.GetKey(KeyCode.LeftShift) &&
+            movement != Vector2.zero;
 
-        }
-        // Left mouse button pressed
+        // Send direction to Animator
+        animator.SetFloat("Horizontal", lastDirection.x);
+        animator.SetFloat("Vertical", lastDirection.y);
+
+        // Send movement speed to Animator
+        animator.SetFloat("Speed", movement.magnitude);
+
+        // Send running state to Animator
+        animator.SetBool("IsRunning", isRunning);
+
+        // Sword attack - Left Mouse Button
         if (Input.GetMouseButtonDown(0))
         {
-            // If right mouse button is being held, shoot arrow
-            if (Input.GetMouseButton(1))
-            {
-                ShootBow();
-            }
-
-            // Else using sword
-            else
-            {
-                SwordAttack();
-            }
+            animator.SetBool("IsAttacking", true);
         }
     }
-    //Health Damage
-    void TakeDamage(int damage){
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
-    }
-
-
 
     private void FixedUpdate()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        // Determine movement speed
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift)
+            ? runSpeed
+            : moveSpeed;
 
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+        // Top-down movement
         if (movementMode == MovementMode.TopDown)
         {
-            moveDirection.x = moveX;
-            moveDirection.y = moveY;
-
-            rb.linearVelocity = new Vector2(moveDirection.x * currentSpeed, moveDirection.y * currentSpeed);
-
-            Vector2 aimDirection = mousePosition - rb.position;
-            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg + 90f;
-            rb.rotation = aimAngle;
+            rb.linearVelocity = movement * currentSpeed;
         }
 
+        // Side-scroller movement
         else if (movementMode == MovementMode.SideScroller)
         {
-            rb.linearVelocity = new Vector2(moveX * currentSpeed, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(
+                movement.x * currentSpeed,
+                rb.linearVelocity.y
+            );
 
-            if (moveX > 0)
+            // Flip character
+            if (movement.x > 0)
+            {
                 transform.localScale = new Vector3(1, 1, 1);
-            else if (moveX < 0)
+            }
+            else if (movement.x < 0)
+            {
                 transform.localScale = new Vector3(-1, 1, 1);
+            }
         }
     }
 
-    // Uses the sword to attack
-
-    void SwordAttack()
+    // Called by the sword attack animation
+    public void EndAttack()
     {
-        Debug.Log("Sword Attack!");
-
-        // Add sword animation or damage logic here
-    }
-
-    //Shoots arrow
-
-    void ShootBow()
-    {
-        Debug.Log("Shoot Arrow!");
-
-
-
+        animator.SetBool("IsAttacking", false);
     }
 }
